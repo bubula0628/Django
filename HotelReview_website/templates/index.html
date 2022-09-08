@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>酒店分數查詢</title>
+<style type="text/css">
+ #bg{
+       width:700px;
+       height:700px;
+	   margin:0 auto;
+   }
+   .bordered {
+            border-style:solid;
+            width:600px;
+            height:400px;
+        }
+</style>
+</head>
+<body>
+<body align="center"/>
+<body style="color:black"/>
+
+<div id="bg" class="bordered">
+<fieldset>
+<legend><h1 align="center" >查詢頁面</h1></legend>
+    <form action="search_post" method="post">
+	
+        {% csrf_token %}
+       <p> <strong>酒店名</strong>&nbsp;<input type="text" name="q"></p>
+
+        <p><input type="submit" value="查詢" style="width:70px;height:30px" ></p>
+    </form>
+
+    
+</fieldset>
+
+    <p id="view">{{ rlt1 }}</p>
+	<p id="view">{{ rlt2 }}</p>
+
+    {% load static %}
+    <img src="{{STATIC_URL}} {{ rlt3 }}" alt="tes1" width="400px">
+
+</body>
+</html>
