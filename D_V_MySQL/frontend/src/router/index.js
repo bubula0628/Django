@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/components/Home'
 import Login from '@/components/Login_front'
+import Vuex from '@/components/Vuex'
 
 const routes = [
   {
@@ -12,8 +13,13 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login
-  }
+  },
 
+  {
+    path: '/vuex',
+    name: 'vuex',
+    component: Vuex
+  }
 ]
 
 const router = createRouter({

@@ -5,7 +5,10 @@
         <el-row display="margin-top:10px">
             <el-input v-model="input.bookName" placeholder="請輸入書名" style="display:inline-table; width: 30%; float:left"></el-input>
             <el-input v-model="input.bookAuthor" placeholder="請輸入書名" style="display:inline-table; width: 30%; float:left"></el-input>
-            <el-button type="primary" @click="addBook()" style="float:left; margin: 2px;">新增</el-button>
+            <el-button type="primary" @click="addBook()"  style="float:left; margin: 2px;">新增</el-button>
+            <a href="vuex">
+            <el-button type="primary" @click="saveBook()"  style="float:left; margin: 2px;">連結至Vuex</el-button>
+            </a>
         </el-row>
         <p>{{input}}</p>
         <p>{{bookList}}</p>
@@ -19,6 +22,7 @@
 </template>
 
 <script>
+ import {mapMutations} from 'vuex'
     export default{
         name: "demo",
         data() {
@@ -47,9 +51,14 @@
                 .then((response) => {
                     this.bookList = response.data
                     console.log(response.data)
+                    location.reload();
  
                 })
-            }
+            },
+
+            ...mapMutations({
+            saveBook:'saveBook'
+      }),
 
         },
     }
