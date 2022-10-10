@@ -1,5 +1,7 @@
 The basic of Vue connecting with Django and MySQL
 
+Update lostorage and Vuex functions 
+
 !the files exclude node_modules of frontend(Vue) for too many files
 
 
